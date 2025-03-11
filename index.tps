@@ -22,6 +22,8 @@ i_stoploss      = input.int(title = "Stop Loss Point", defval = 30, group = "Str
 // Get indicator values
 ma1 = ta.sma(close, i_ma1)
 ma2 = ta.sma(close, i_ma2)
+ma29 = ta.ema(close, 29)
+ma51 = ta.ema(close, 51)
 
 // Check filter(s)
 f_dateFilter = time >= i_startTime and time <= i_endTime
@@ -59,5 +61,7 @@ if sellCondition or stopCondition
 // Draw pretty colors
 plot(ma1, color=color.blue)
 plot(ma2, color=color.orange)
+plot(ma29, color = color.yellow)
+plot(ma51, color = color.lime)
 
 
